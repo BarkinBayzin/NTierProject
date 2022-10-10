@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC5306E0-149E-469A-9B00-3FA890E277CA}"
+	ProjectSection(SolutionItems) = preProject
+		NTier Adımlar.txt = NTier Adımlar.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Core", "NTier.Core\NTier.Core.csproj", "{CFC72FE4-8805-4488-B3D8-7E3A89958736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Model", "NTier.Model\NTier.Model.csproj", "{C8019EAB-C7DD-4952-8578-5FB2A0714D03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Service", "NTier.Service\NTier.Service.csproj", "{82FEFABA-C8BB-417E-B6FB-988668498456}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFC72FE4-8805-4488-B3D8-7E3A89958736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC72FE4-8805-4488-B3D8-7E3A89958736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC72FE4-8805-4488-B3D8-7E3A89958736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC72FE4-8805-4488-B3D8-7E3A89958736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8019EAB-C7DD-4952-8578-5FB2A0714D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8019EAB-C7DD-4952-8578-5FB2A0714D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8019EAB-C7DD-4952-8578-5FB2A0714D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8019EAB-C7DD-4952-8578-5FB2A0714D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82FEFABA-C8BB-417E-B6FB-988668498456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82FEFABA-C8BB-417E-B6FB-988668498456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82FEFABA-C8BB-417E-B6FB-988668498456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82FEFABA-C8BB-417E-B6FB-988668498456}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86BB3DB2-CCE3-4B3F-B1A2-C76AA30E1C4A}
+	EndGlobalSection
+EndGlobal
