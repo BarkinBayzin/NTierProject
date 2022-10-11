@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Model", "NTier.Model\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Service", "NTier.Service\NTier.Service.csproj", "{82FEFABA-C8BB-417E-B6FB-988668498456}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.UI", "NTier.UI\NTier.UI.csproj", "{CCD9E97B-B210-4D49-BD50-27765C86AD74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{82FEFABA-C8BB-417E-B6FB-988668498456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82FEFABA-C8BB-417E-B6FB-988668498456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82FEFABA-C8BB-417E-B6FB-988668498456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD9E97B-B210-4D49-BD50-27765C86AD74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD9E97B-B210-4D49-BD50-27765C86AD74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD9E97B-B210-4D49-BD50-27765C86AD74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD9E97B-B210-4D49-BD50-27765C86AD74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

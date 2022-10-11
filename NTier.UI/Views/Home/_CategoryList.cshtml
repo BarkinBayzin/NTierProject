@@ -1,0 +1,48 @@
+﻿
+@model IEnumerable<NTier.Model.Entities.Category>
+
+<div class="side-menu animate-dropdown outer-bottom-xs">
+    <div class="head">
+        <i class="icon fa fa-align-justify fa-fw"></i>
+        Categories
+    </div>
+    <nav class="yamm megamenu-horizontal">
+        <ul class="nav">
+                @foreach (var item in Model)
+                {
+                    <li class="dropdown menu-item">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa-light fa-cart-shopping" aria-hidden="true"></i>@item.Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-3">
+                                        <ul class="links list-unstyled">
+                                            <li>
+                                                <ul class="links list-unstyled">
+                                                    @foreach (var subitem in item.SubCategories)
+                                                    {
+                                                        <li>
+                                                            <a href="/Product/List/@subitem.Id">@subitem.Name</a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row-->
+                            </li>
+                            <!-- /.yamm-content -->
+                        </ul>
+                        <!-- /.dropdown-menu -->
+                    </li>
+                }
+
+        </ul>
+        <!-- /.nav -->
+    </nav>
+    <!-- /.megamenu-horizontal -->
+</div>

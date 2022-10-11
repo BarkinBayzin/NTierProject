@@ -11,7 +11,7 @@ namespace NTier.Model.Entities
     {
         public decimal? UnitPrice { get; set; }
         public short? UnitsInStock { get; set; }
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
         public string ImagePath { get; set; }
         public string Name { get; set; }
         public Guid SubCategoryID { get; set; }

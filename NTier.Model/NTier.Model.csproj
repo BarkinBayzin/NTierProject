@@ -64,10 +64,18 @@
     <Compile Include="Map\OrdersMap.cs" />
     <Compile Include="Map\ProductMap.cs" />
     <Compile Include="Map\SubCategoryMap.cs" />
+    <Compile Include="Migrations\202210110943055_DataTypeChanged.cs" />
+    <Compile Include="Migrations\202210110943055_DataTypeChanged.designer.cs">
+      <DependentUpon>202210110943055_DataTypeChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202210110943055_DataTypeChanged.resx">
+      <DependentUpon>202210110943055_DataTypeChanged.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NTier.Core\NTier.Core.csproj">
       <Project>{cfc72fe4-8805-4488-b3d8-7e3a89958736}</Project>
