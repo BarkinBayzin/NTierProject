@@ -1,0 +1,73 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<NTier.Model.Entities.Product>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>
+                    Ürün Adı
+                </th>
+                <th>
+                    Ürün Fiyatı
+                </th>
+                <th>
+                    Ürün Stok Miktarı
+                </th>
+                <th>
+                    Ürün Birimi
+                </th>
+                <th>
+                    Kategori Adı
+                </th>
+                <th>
+                    Fotoğraf
+                </th>
+                <th colspan="2">Güncelle / Sil</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name)
+                    </td>
+                    <td>
+                        @item.UnitPrice
+                    </td>
+                    <td>
+                        @item.UnitsInStock
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                    <td>
+                        @item.SubCategory.Name
+                    </td>
+                    <td>
+                        <img src="@item.ImagePath" style="display:block;" width="30" height="30" />
+                    </td>
+                    <td>
+                        <a href="/Admin/Product/Update/@item.Id">Güncelle</a>
+                        /
+                        <a href="/Admin/Product/Delete/@item.Id">Sil</a>
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="pagedList">
+            @Html.PagedListPager(Model, page => Url.Action("List", "Product", new { page }), PagedListRenderOptions.Classic)
+        </div>
+    </div>
+</div>
+

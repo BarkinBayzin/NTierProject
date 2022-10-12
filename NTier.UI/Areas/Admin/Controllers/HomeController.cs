@@ -23,10 +23,10 @@ namespace NTier.UI.Areas.Admin.Controllers
         public ActionResult Index()
         {
             //Onaylanmamaış tüm sipariler admin'e gönderiliyoru.
-            //List<Orders> model = _orderService.GetDefaults(x => x.Confirmed == false && x.Status == Status.Active);
+            List<Orders> model = _orderService.GetDefaults(x => x.Confirmed == false && x.Status == Status.Active);
 
-            ////Sipariş sayısı viewbag içerisinde gönderiliyor.
-            //if(model != null) ViewBag.Siparis = model.Count;
+            //Sipariş sayısı viewbag içerisinde gönderiliyor.
+            if(model != null) ViewBag.Siparis = model.Count;
             
             return View();
         }

@@ -1,0 +1,35 @@
+﻿@model List<NTier.Model.Entities.Category>
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-6 ">
+        <form action="/Admin/SubCategory/Create" method="post">
+            <div class="form-group">
+                <label for="Name">Alt Kategori İsmi</label>
+                <input type="text" name="Name" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Description">Alt Kategori Açıklaması</label>
+                <input type="text" name="Description" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="CategoryID">Kategori Seçiniz</label>
+                <select name="CategoryID" class="form-control">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <input type="submit" value="Ekle" class="form-control btn btn-primary" />
+        </form>
+
+        <div>
+            @Html.ActionLink("Back to List", "List")
+        </div>
+    </div>
+</div>
+
