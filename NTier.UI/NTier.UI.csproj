@@ -139,6 +139,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\SubCategoryController.cs" />
     <Compile Include="Areas\Admin\Models\SubCategoryVM.cs" />
+    <Compile Include="Areas\Admin\Models\UpdateProductVM.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -172,6 +173,9 @@
     <Content Include="Areas\Admin\Views\SubCategory\Create.cshtml" />
     <Content Include="Areas\Admin\Views\SubCategory\Update.cshtml" />
     <Content Include="Areas\Admin\Views\SubCategory\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -203,6 +207,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Uploads\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

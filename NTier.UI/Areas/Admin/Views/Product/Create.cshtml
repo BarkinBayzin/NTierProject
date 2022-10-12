@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+@model List<NTier.Model.Entities.SubCategory>
+
+<form action="/Admin/Product/Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Name">İsmi</label>
+        <input type="text" name="Name" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="UnitPrice">Fiyatı</label>
+        <input type="text" name="UnitPrice" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="UnitsInStock">Stok Miktarı</label>
+        <input type="text" name="UnitsInStock" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Quantity">Adeti/Birimi</label>
+        <input type="number" name="Quantity" value="" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="SubCategoryID">Kategori Seçiniz</label>
+        <select name="SubCategoryID" class="form-control">
+            @foreach(var item in Model)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="ImagePath">Fotoğraf</label>
+        <input type="file" name="image" value="" />
+    </div>
+    <input type="submit" value="Ekle" class="form-control btn btn-primary"/>
+</form>
+

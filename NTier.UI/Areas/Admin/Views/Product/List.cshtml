@@ -33,14 +33,14 @@
                 <th>
                     Fotoğraf
                 </th>
-                <th colspan="2">Güncelle / Sil</th>
+                <th colspan="3">Güncelle / Sil / Details </th>
             </tr>
 
             @foreach (var item in Model)
             {
                 <tr>
                     <td>
-                        @item.Name)
+                        @item.Name
                     </td>
                     <td>
                         @item.UnitPrice
@@ -61,6 +61,8 @@
                         <a href="/Admin/Product/Update/@item.Id">Güncelle</a>
                         /
                         <a href="/Admin/Product/Delete/@item.Id">Sil</a>
+                        /
+                        <a href="/Admin/Product/Details/@item.Id">Ürün Detayı</a>
                     </td>
                 </tr>
             }

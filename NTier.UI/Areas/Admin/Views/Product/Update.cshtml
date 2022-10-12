@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+@model UpdateProductVM
+
+<form action="/Admin/Product/Update" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="Id" value="@Model.Product.Id" />
+    <div class="form-group">
+        <label for="Name">İsmi</label>
+        <input type="text" name="Name" value="@Model.Product.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="UnitPrice">Fiyatı</label>
+        <input type="text" name="UnitPrice" value="@Model.Product.UnitPrice" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="UnitsInStock">Stok Miktarı</label>
+        <input type="text" name="UnitsInStock" value="@Model.Product.UnitsInStock" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Quantity">Adeti/Birimi</label>
+        <input type="number" name="Quantity" value="@Model.Product.Quantity" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="SubCategoryID">Kategori Seçiniz</label>
+        <select name="SubCategoryID" class="form-control">
+            @foreach (var item in Model.SubCategories)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        @if (Model.Product.ImagePath != null)
+        {
+            <img src="@Model.Product.ImagePath" width="100" height="100" />
+        }
+        <label for="ImagePath">Fotoğraf</label>
+        <input type="file" name="image" value="" />
+    </div>
+    <input type="submit" value="Ekle" class="form-control btn btn-primary" />
+</form>
+
+
+

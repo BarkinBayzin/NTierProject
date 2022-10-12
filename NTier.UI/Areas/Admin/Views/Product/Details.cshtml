@@ -1,0 +1,168 @@
+﻿@model NTier.Model.Entities.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <h1 style="padding-left:1%">@Model.Name</h1>
+    <hr />
+    <div class="col-md-8">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SubCategory.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SubCategory.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UnitsInStock)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitsInStock)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImagePath)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MasterId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MasterId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedComputerName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedComputerName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedIp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedIp)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedAtUserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedAtUserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedBy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedComputerName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedComputerName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedIp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedIp)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedAtUserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedAtUserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedBy)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <img src="@Model.ImagePath" width="500" height="500" />
+    </div>
+   
+</div>
+<p>
+    @Html.ActionLink("Edit", "Update", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List")
+</p>
