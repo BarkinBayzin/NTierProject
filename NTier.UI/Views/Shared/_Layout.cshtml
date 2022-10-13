@@ -29,10 +29,11 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    @RenderSection("scripts1",false)
 </head>
-<body class="cnt-home">
+<body class="cnt-home" style="margin-top:-50px;">
     <!-- ======================== HEADER =================== -->
     <header class="header-style-1">
         <!-- ================ TOP MENU ==================== -->
@@ -128,6 +129,7 @@
                             <div class="nav-outer">
                                 <ul class="nav navbar-nav">
                                     <li class="active animate-dropdown yamm-fw"><a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a></li>
+                                    <li class="active animate-dropdown yamm-fw"><a href="/Product/List" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Product List</a></li>
                                 </ul>
                                 <!-- /.navbar-nav -->
                                 <div class="clearfix"></div>

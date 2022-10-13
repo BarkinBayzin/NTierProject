@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login">
+    <div class="container">
+        <h3>Login</h3>
+        <div class="col-lg-6">
+            <form id="frm" onsubmit="return check_Alpha(this)">
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input type="text" name="username" value="" class="form-control" placeholder="Username" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" value="" class="form-control" placeholder="Password" />
+                </div>
+                <input type="submit" name="name" value="Login" class="btn btn-primary form-control" />
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+
+        //Alfabe kontrolü regex=>
+        function check_Alpha(letters) {
+            var regex = /^[a-zA-Z]+$/;
+            if (regex.test(letters.username.value) == false) {
+                alert("Name must be in alphabets only");
+                letters.yourname.focus();
+                return false;
+            }
+            if (letters.username.value == " ") {
+                alert("Name Field cannot be left empty");
+                letters.username.focus();
+                return false;
+            }
+            return true;
+        };
+
+        $("#frm").submit(function (e) {
+            e.preventDefault();
+            //alert($("#frm").serialize());
+            $.ajax({
+                url: "/Home/Login",
+                type: "POST",
+                data: $("#frm").serialize(),
+                success: function (response) {
+                    if (response.Success) {
+                        window.location.href = response.RedirectUrl;
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+        });
+
+    </script>
+}

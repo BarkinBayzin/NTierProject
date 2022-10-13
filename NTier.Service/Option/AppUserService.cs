@@ -17,7 +17,7 @@ namespace NTier.Service.Option
 
         public AppUser FindByUsername(string userName)
         {
-            return GetByDefault(x => x.UserName == userName);
+            return GetByDefault(x => x.UserName == userName && x.Status != Core.Entity.Enum.Status.Deleted);
         }
     }
 }

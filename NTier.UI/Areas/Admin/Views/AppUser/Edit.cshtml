@@ -1,0 +1,75 @@
+﻿@model NTier.Model.Entities.AppUser
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+<div class="row ">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 " style="margin-top:5%">
+        <form action="/Admin/AppUser/Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="form-group">
+                <label for="Name">İsmi</label>
+                <input type="text" name="Name" value="@Model.Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Surname">Soyismi</label>
+                <input type="text" name="Surname" value="@Model.Surname" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="PhoneNumber">Telefon</label>
+                <input type="text" name="PhoneNumber" value="@Model.PhoneNumber" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Address">Adres</label>
+                <input type="text" name="Address" value="@Model.Address" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Email">E-Mail</label>
+                <input type="text" name="Email" value="@Model.Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="UserName">Kullanıcı Adı</label>
+                <input type="text" name="UserName" value="@Model.UserName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Password">Şifre</label>
+                <input type="password" name="Password" value="@Model.Password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="ImagePath">Kullanıcı Resmi</label>
+                <img src="@Model.ImagePath" style="display:block;" width="100" height="100" />
+            </div>
+            <div class="form-group">
+                <label for="ImagePath">Fotoğraf</label>
+                <input type="file" name="image" value="" />
+            </div>
+            <div class="form-group">
+                <label for="Role">Rol</label>
+                <select name="Role">
+                    @foreach (var item in Enum.GetNames(typeof(NTier.Model.Entities.Role)))
+                    {
+                        if (item == Model.Role.ToString())
+                        {
+                            <option selected value="@item">@item</option>
+                        }
+                        else
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    }
+                </select>
+            </div>
+            <input type="submit" value="Ekle" class="form-control btn btn-primary" />
+        </form>
+
+
+        <div>
+            @Html.ActionLink("Back to List", "List")
+        </div>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+

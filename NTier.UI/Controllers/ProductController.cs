@@ -13,10 +13,10 @@ namespace NTier.UI.Controllers
         ProductService _productService;
         SubCategoryService _subCategoryService;
 
-        public ProductController(SubCategoryService subCategoryService, ProductService productService)
+        public ProductController()
         {
-            _subCategoryService = subCategoryService;
-            _productService = productService;
+            _subCategoryService = new SubCategoryService();
+            _productService = new ProductService();
         }
 
         public ActionResult Detail(Guid? id)
@@ -32,13 +32,16 @@ namespace NTier.UI.Controllers
 
         public ActionResult List(Guid? id)
         {
-            if(id!=null)
+            if (id != null)
             {
                 IEnumerable<Product> productListByCategory = _productService.GetDefaults(x => x.SubCategoryID == id);
                 return View(productListByCategory);
             }
-
-            return Redirect("~/Home/Index");
+            else
+            {
+                IEnumerable<Product> productList = _productService.GetActives();
+                return View(productList);
+            }
         }
     }
 }

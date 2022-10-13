@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+@model List<NTier.Model.Entities.OrderDetails>
+    @{ 
+        decimal toplamTutar = 0;
+    }
+
+<div class="col-md-12">
+    <span>Sipariş Kodu: @Model[0].Orders.Id</span>&nbsp;
+    <a href="/Admin/Orders/ConfirmOrder/@Model[0].Orders.Id">Onayla <i class="fa fa-check"></i></a>/
+    <a href="/Admin/Orders/RejectOrder/@Model[0].Orders.Id">Reddet <i class="fa fa-check"></i></a>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Ürün Fotoğraf</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Birim Fiyatı</th>
+                <th>Ürün Miktarı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td><img src="@item.Product.ImagePath" style="display:block;" width="30" height="30" /></td>
+                <td>@item.Product.Name</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.Quantity</td>
+            </tr>
+            toplamTutar += (decimal)(item.Quantity * item.UnitPrice);
+            }
+        </tbody>
+    </table>
+    <span>Sipariş Toplam Tutarı: @toplamTutar <i class="fa fa-dollar"></i></span>
+</div>

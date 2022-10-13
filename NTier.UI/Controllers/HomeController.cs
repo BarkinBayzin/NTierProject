@@ -1,8 +1,10 @@
-﻿using NTier.Model.Entities;
+﻿using NTier.AuthService.Models;
+using NTier.Model.Entities;
 using NTier.Service.Option;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -56,12 +58,40 @@ namespace NTier.UI.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Login(Credentials model)
+        {
+            var url = "";
+            if (model.username == null || model.password == null)
+            {
+                url = "https://localhost:44368/Home/Login";
+                return Redirect(url);
+            }
+            if (_appUserService.CheckCredentials(model.username, model.password))
+            {
+                AppUser user = new AppUser();
+                user = _appUserService.FindByUsername(model.username);
+
+                if (user.Role == Role.Admin || user.Role == Role.Member)
+                {
+                    return View("Index",user.Id);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+
+
+                }
+            }
+            return RedirectToAction("Login", "Home");
+
+        }
 
         //Bu metot API üzerinden yönlendirilerek ulaşılmaktadır.
-        public RedirectResult Logout()
+        public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return Redirect("/Home/Index");
+            return RedirectToAction("Index","Home");
         }
 
     }

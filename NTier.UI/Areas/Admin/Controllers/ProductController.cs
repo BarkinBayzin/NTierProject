@@ -47,7 +47,7 @@ namespace NTier.UI.Areas.Admin.Controllers
                 data.ImagePath = ImageUploader.UploadSingleImage("~/Uploads/", image);
 
                 if (data.ImagePath == "0" || data.ImagePath == "1" || data.ImagePath == "2")
-                    data.ImagePath = "~/Content/Images/TestPhoto.jpg";
+                    data.ImagePath = "~/Uploads/48718ae0-cc55-4377-94ce-de4b69cbf590.jpg";
 
                 _productService.Add(data);
                 return Redirect("/Admin/Product/List");
@@ -75,9 +75,9 @@ namespace NTier.UI.Areas.Admin.Controllers
             if (data.ImagePath == "0" || data.ImagePath == "1" || data.ImagePath == "2")
             {
                 Product updated = _productService.GetById(data.Id);
-                if (updated.ImagePath == null || updated.ImagePath == "~/Content/Images/TestPhoto.jpg")
+                if (updated.ImagePath == null || updated.ImagePath == "~/Uploads/48718ae0-cc55-4377-94ce-de4b69cbf590.jpg")
                 {
-                    data.ImagePath = "~/Content/Images/TestPhoto.jpg";
+                    data.ImagePath = "~/Uploads/48718ae0-cc55-4377-94ce-de4b69cbf590.jpg";
                 }
                 else
                 {
